@@ -1,2 +1,1 @@
-# function-for-real-ogbemea2020
-# function-for-real-ogbemea2020
+Sources for the session Make your Cloud Applications Function for real – A Complete Overview of Oracle Functions as a Service for Oracle Groundbreakers EMEA  Virtual Tour 2020.
