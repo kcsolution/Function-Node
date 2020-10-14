@@ -1,0 +1,7 @@
+TAGS
+REVISION
+node_modules/
+reports/
+/npm-debug.log
+/coverage
+/.npm

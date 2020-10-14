@@ -36,7 +36,8 @@ fdk.handle(async function(input, ctx){
   hostname = ctx._config['HOSTNAME']
   console.log(`Probe function - Host ${hostname}, instance lifetime ${new Date() - startTimeOfInstance}, handling request no ${requestCount} concurrent requests right now ${concurrentRequests}, time since last request ${new Date() - mostRecentCall}, backgroundWork: ${backgroundWorkCount}`)
   mostRecentCall = new Date()
-  const result = await handleRequest(ctx)
+ const result = await handleRequest(ctx)
+ //const result = "X"
   concurrentRequests--
   console.log(`**** done processing request`)
   return {'result':result, 'totalRequestsHandledInInstance':requestCount,'ctx': ctx}

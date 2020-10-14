@@ -5,7 +5,13 @@
 	"main": "func.js",
 	"author": "",
 	"license": "Apache-2.0",
+	"scripts": {
+		"test": "jest"
+	},
 	"dependencies": {
-		"@fnproject/fdk": ">=0.0.18"
+		"-": "0.0.1",
+		"@fnproject/fdk": ">=0.0.18",
+		"jest": "^26.5.3",
+		"save-dev": "0.0.1-security"
 	}
 }
