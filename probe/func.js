@@ -13,7 +13,8 @@ async function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)
 async function backgroundWork() {
   backgroundWorkCount++
   console.log(`*-*-* ${backgroundWorkCount} reporting from the background, host ${hostname}, time since last request ${Math.floor((new Date() - mostRecentCall)/1000)} seconds`)
-  backgroundJob = setTimeout( backgroundWork, 1000)
+  if (backgroundWorkCount < 10)
+    backgroundJob = setTimeout( backgroundWork, 1000)
 }
 
 async function handleRequest(ctx) {
@@ -25,7 +26,7 @@ async function handleRequest(ctx) {
   await sleep(6000)
   // run background work every - after completing the request 
   backgroundWorkCount = 0
-  clearTimeout(backgroundJob) 
+  clearTimeout(backgroundJob) // in case background work is still taking place from a previous request
   backgroundJob = setTimeout( backgroundWork, 500)
   return "Request Handling Complete, backgroundjob started"
 }

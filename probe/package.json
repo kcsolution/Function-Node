@@ -6,12 +6,27 @@
 	"author": "",
 	"license": "Apache-2.0",
 	"scripts": {
-		"test": "jest"
+		"sonar": "node sonar-project.js",
+		"test": "jest --coverage"
 	},
 	"dependencies": {
 		"-": "0.0.1",
 		"@fnproject/fdk": ">=0.0.18",
 		"jest": "^26.5.3",
-		"save-dev": "0.0.1-security"
-	}
+		"jest-sonar-reporter": "^2.0.0",
+		"save-dev": "0.0.1-security",
+		"sonarqube-scanner": "^2.7.0"
+	},
+    "jest": {
+        "testEnvironment":  "node",
+        "coveragePathIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "testResultsProcessor":  "jest-sonar-reporter"
+    },
+    "jestSonar": {
+        "reportPath":  "coverage",
+        "reportFile":  "test-reporter.xml",
+        "indent":  4
+    }
 }
