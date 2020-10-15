@@ -1,5 +1,6 @@
 const sonarqubeScanner =  require('sonarqube-scanner'); // https://www.npmjs.com/package/sonarqube-scanner
-const sonarqubeServerURL = process.env["SONARQUBE_SERVER_URL"] ||'http://localhost:9000'
+const sonarqubeServerURL = process.env["SONAR_URL"] ||'http://somehost:9000'
+console.log(`sonarqubeServerURL = ${sonarqubeServerURL}` )
 const sonarQubeprojectName = provess.env["SONAR_PROJECT_NAME"] || 'my-first-sonarqube-project'
 sonarqubeScanner(
     {
