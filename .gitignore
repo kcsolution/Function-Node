@@ -3,6 +3,6 @@ REVISION
 node_modules/
 reports/
 /npm-debug.log
-/coverage
-/.scannerwork
+coverage/
+.scannerwork/
 /.npm
